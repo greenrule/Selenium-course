@@ -31,8 +31,11 @@ public class Menu_test {
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
+        //переходим по 1 элементу меню
         driver.findElement(By.cssSelector("#box-apps-menu > li:nth-of-type(1)")).click();
+        //проверяем, что есть заголовок
         driver.findElement(By.cssSelector("h1"));
+        //переходим к вложенному меню
         driver.findElement(By.cssSelector("#doc-template")).click();
         driver.findElement(By.cssSelector("h1"));
         driver.findElement(By.cssSelector("#doc-logotype")).click();
