@@ -28,21 +28,15 @@ public class  Sticker_test {
     @Test
 
     public void Sticker_test() {
-        driver.navigate().to("http://localhost/litecart/admin/");
+        driver.navigate().to("http://localhost/litecart/en/");
         //ищем товары в блоке
         List<WebElement> elementList  =driver.findElements(By.cssSelector(".listing-wrapper a"));
-        int numberOfListElements = elementList.size();
-        for (int i = 0; i < numberOfListElements ; i++){
-            elementList = driver.findElements(By.cssSelector(".listing-wrapper a"));
+        //цикл для каждого товара
+        for (int i = 0; i < elementList.size(); i++){
+            //для каждого товара получаем список стикеров
+            List<WebElement>stickers = elementList.get(i).findElements(By.cssSelector(".sticker"));
             //проверяем, что у товара один стикер
-            int sum = 0;
-            while (true) {
-                driver.findElements(By.cssSelector(".sticker")).size() > 0;
-                sum = sum + 1;
-            }
-            if (sum > 2) {
-                System.out.println("Стикеров больше 2-х");
-            }
+            assert stickers.size() == 1;
         }
     }
     @After
