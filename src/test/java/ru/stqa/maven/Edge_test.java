@@ -20,7 +20,7 @@ public class Edge_test {
     public void start() {
         driver = new EdgeDriver();
         //ждем 10 секунд, чтобы найти элемент
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //todo горор
         wait = new WebDriverWait(driver, 10);
 
     }
